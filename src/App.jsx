@@ -11,7 +11,7 @@ function App() {
     setIsLoading(true);
     try {
       const responseData = await axios.post(
-        "https://summary-analyser-backend.onrender.com/summary",
+        "https://summary-analyzer-backend.onrender.com/summary",
         {
           text,
         },
@@ -47,7 +47,7 @@ function App() {
                 {isLoading ? "Summarizing...." : "Submit"}
               </button>
             </div>
-            <p className="errMMsg">{errMessage}</p>
+            {!text && <p className="errMMsg">{errMessage}</p>}
           </form>
         </div>
         {responseData && (
